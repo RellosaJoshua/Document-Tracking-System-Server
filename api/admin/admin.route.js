@@ -13,8 +13,8 @@ const router = express.Router();
 // parent route api/admin
 
 router.get('/', checkIfAdminExist, createAdmin);
-router.post('/department-user', createDepartmentUser);
-router.post('/office-user', createOfficeUser);
-router.post('/administrative-user', createAdministrativeUser);
+router.post('/department-user', [verifyToken, isAdmin], createDepartmentUser);
+router.post('/office-user', [verifyToken, isAdmin], createOfficeUser);
+router.post('/administrative-user', [verifyToken, isAdmin], createAdministrativeUser);
 
 module.exports = router;
