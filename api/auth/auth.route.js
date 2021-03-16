@@ -9,6 +9,6 @@ const router = express.Router();
 
 router.post('/login', login);
 router.post('/isauth', isAuth);
-router.get('/authuser', [verifyAuthUser], getAuthUser);
+router.get('/authuser', [verifyToken, verifyAuthUser], getAuthUser);
 
 module.exports = router;
