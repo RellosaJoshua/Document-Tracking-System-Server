@@ -65,6 +65,7 @@ module.exports = {
 
         createDepartmentUserQuery(newUserData, (err, result) => {
             if(err) {
+                console.log(err);
                 return res.status(500).json({
                     success: false,
                     message: 'Server error'

@@ -14,6 +14,7 @@ app.use(cors());
 app.use('/api/admin', require('./api/admin/admin.route'));
 app.use('/api/auth', require('./api/auth/auth.route'));
 app.use('/api/request', require('./api/request/request.route'));
+app.use('/api/utils', require('./api/utils/utils.route'));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

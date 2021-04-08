@@ -12,7 +12,7 @@ module.exports = {
 
         loginQuery(credentials.username, (err, result) => {
             if(err) {
-                return res.staus(500).json({
+                return res.status(500).json({
                     success: false,
                     message: 'server error'
                 });
@@ -74,6 +74,8 @@ module.exports = {
                     message: 'Server error'
                 });
             }
+
+            result.password = undefined;
 
             return res.status(200).json({
                 success: true,
